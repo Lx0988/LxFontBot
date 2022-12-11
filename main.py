@@ -14,25 +14,13 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 if __name__ == "__main__" :
-    plugins = dict(
-        root="plugins"
-    )
+
     app = Client(
         "ShowJson",
         bot_token=Config.BOT_TOKEN,
         api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        plugins=plugins,
-        workers=100
+        api_hash=Config.API_HASH,                
     )
-
-
-import os
-from config import Config
-from .fonts import Fonts
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
 
 @Client.on_message(filters.command('start'))
 async def start(c, m):
